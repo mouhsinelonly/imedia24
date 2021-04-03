@@ -1,7 +1,3 @@
-declare enum QueryKey {
-    PokemonsList = 'POKEMONS_LIST'
-}
-
 declare type IPokemon = {
     name: string
     url: string
@@ -13,8 +9,5 @@ type IPokemonsData = {
 }
 
 type IPokemonsJSONResponse = {
-    data?: {
-        results: IPokemon[]
-    }
-    errors?: Array<{ message: string }>
+    results: IPokemon[]
 }

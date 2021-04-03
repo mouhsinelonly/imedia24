@@ -1,6 +1,8 @@
 import Head from 'next/head'
-
+import { usePokemonsList } from '@hooks/usePokemonsList'
 export default function Home() {
+  const { pages } = usePokemonsList()
+  console.log(pages)
   return (
     <div>
       <Head>
