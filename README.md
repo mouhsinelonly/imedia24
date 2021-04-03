@@ -16,8 +16,12 @@ yarn build
 
 To run unit tests run:
 
+```bash
 yarn test
+```
 
 To run cypress E2E test run :
 
+```bash
 yarn run cypress:open
+```
