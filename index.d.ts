@@ -4,7 +4,7 @@ declare type IPokemon = {
 }
 
 type IPokemonsData = {
-    pages: IPokemon[]
+    items: IPokemon[]
     nextPage: number
 }
 
