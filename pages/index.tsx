@@ -26,7 +26,7 @@ export default function Home() {
       <InfiniteScroll
         loadMore={fetchNextPage}
         hasMore={hasNextPage}
-        loader={<Loading key={0} />}>
+        loader={<div key={0} className='bg-white p-4 rounded mt-4 flex justify-center'><Loading /></div>}>
         <div className='grid grid-cols-1 gap-4 w-full'>
           {pages.map((page) => page.items.map((pokemon, index) => <PokemonListItem
             onClick={_handlePokemonClick}
