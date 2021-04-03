@@ -9,8 +9,13 @@ import { PokemonModal } from '../components/PokemonModal';
 export default function Home() {
   const [chosenPokemonUrl, setChosenPokemonUrl] = useState<string | null>(null)
   const { pages, hasNextPage, fetchNextPage } = usePokemonsList()
+
   const _handlePokemonClick = (url: string) => {
     setChosenPokemonUrl(url)
+  }
+
+  const _handleModalExit = () => {
+    setChosenPokemonUrl(null)
   }
   return (
     <div className='min-h-screen pb-48 bg-gray-100 p-4'>
@@ -29,7 +34,7 @@ export default function Home() {
             pokemon={pokemon} />))}
         </div>
       </InfiniteScroll>
-      {chosenPokemonUrl && <PokemonModal url={chosenPokemonUrl} />}
+      {chosenPokemonUrl && <PokemonModal onExit={_handleModalExit} url={chosenPokemonUrl} />}
     </div>
   )
 }
