@@ -1,10 +1,10 @@
 import { useCallback, useEffect } from 'react'
 export const useEscDown = (callback: () => void) => {
-    const _OnEscKeyDown = useCallback((event) => {
-        if (event.keyCode === 27) {
+    const _OnEscKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
             callback()
         }
-    }, [callback]);
+    };
 
     useEffect(() => {
         document.addEventListener("keydown", _OnEscKeyDown, false);

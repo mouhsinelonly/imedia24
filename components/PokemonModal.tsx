@@ -1,20 +1,24 @@
 import { useEscDown } from '@hooks/useEscDown'
-import { useCallback } from 'react'
+import React, { useCallback } from 'react'
 import { usePokemon } from '@hooks/usePokemon'
 import { Loading } from '@components/Loading'
 
 export const PokemonModal = ({ url, onExit }: { url: string, onExit: () => void }) => {
     const { pokemon, status } = usePokemon(url)
+
     useEscDown(onExit)
 
     const _handleBackDropClick = useCallback(() => onExit(), [])
 
+    const _handleModalBdyClick = (event: React.MouseEvent<HTMLDivElement>) => event.stopPropagation()
+
     return <div
+        data-testid='pokemon-modal'
         onClick={_handleBackDropClick}
         className='flex justify-center items-center bottom-0 
         w-full fixed top-0 right-0 bg-black bg-opacity-70 overscroll-contain'>
         <div
-            onClick={(event) => event.stopPropagation()}
+            onClick={_handleModalBdyClick}
             className='bg-white m-4 p-4 rounded w-full sm:w-1/2 relative pt-16 pb-8'>
             <button
                 type='button'

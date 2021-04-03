@@ -1,11 +1,12 @@
 declare type IPokemon = {
+    id?: number
     name: string
-    url: string
-    height: number
-    weight: number
-    order: number
-    base_experience: number
-    sprites: IPokemonSprite
+    url?: string
+    height?: number
+    weight?: number
+    order?: number
+    base_experience?: number
+    sprites?: IPokemonSprite
 }
 
 declare type IPokemonSprite = {
