@@ -5,7 +5,7 @@ declare type IPokemon = {
 
 type IPokemonsData = {
     items: IPokemon[]
-    nextPage: number
+    pageParam: number
 }
 
 type IPokemonsJSONResponse = {

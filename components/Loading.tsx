@@ -1,0 +1,1 @@
+export const Loading = () => <div className='bg-white p-4 rounded'>Loading...</div>
