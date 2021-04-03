@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { usePokemonsList } from '@hooks/usePokemonsList'
 import InfiniteScroll from 'react-infinite-scroller';
 import { PokemonListItem } from '../components/PokemonListItem';
-import { Loading } from '../components/Loading';
-import { PokemonModal } from '../components/PokemonModal';
+import { Loading } from '@components/Loading';
+import { PokemonModal } from '@components/PokemonModal';
 
 export default function Home() {
   const [chosenPokemonUrl, setChosenPokemonUrl] = useState<string | null>(null)

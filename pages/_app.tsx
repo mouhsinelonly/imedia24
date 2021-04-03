@@ -1,3 +1,4 @@
+import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import { useRef } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
