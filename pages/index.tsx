@@ -1,10 +1,10 @@
-import Head from 'next/head'
 import { useState } from 'react'
 import { usePokemonsList } from '@hooks/usePokemonsList'
-import InfiniteScroll from 'react-infinite-scroller';
 import { PokemonListItem } from '../components/PokemonListItem';
 import { Loading } from '@components/Loading';
 import { PokemonModal } from '@components/PokemonModal';
+import InfiniteScroll from 'react-infinite-scroller';
+import Head from 'next/head'
 
 export default function Home() {
   const [chosenPokemonUrl, setChosenPokemonUrl] = useState<string | null>(null)
@@ -27,7 +27,7 @@ export default function Home() {
         loadMore={fetchNextPage}
         hasMore={hasNextPage}
         loader={<div key={0} className='bg-white p-4 rounded mt-4 flex justify-center'><Loading /></div>}>
-        <div className='grid grid-cols-1 gap-4 w-full'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 w-full'>
           {pages.map((page) => page.items.map((pokemon, index) => <PokemonListItem
             onClick={_handlePokemonClick}
             key={index}
